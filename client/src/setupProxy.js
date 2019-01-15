@@ -1,8 +1,23 @@
 // needed for create react app 2.0 and higher
 
-const proxy = require('http-proxy-middleware');
+// const proxy = require('http-proxy-middleware');
 
+// module.exports = function(app) {
+//    app.use(proxy('/api/*', { target: 'http://localhost:5000' }));
+//    app.use(proxy('/auth/google', { target: 'http://localhost:5000' }));
+// };
+
+// edit bc /api/surveys/thanks routing didn't work
+const proxy = require('http-proxy-middleware')
+ 
+// module.exports = function(app) {
+//   app.use(proxy('/api', { target: 'http://localhost:5000' }));
+//   app.use(proxy('/auth/google', { target: 'http://localhost:5000' }));
+// };
+
+// give /surveys its own path
 module.exports = function(app) {
-   app.use(proxy('/api/*', { target: 'http://localhost:5000' }));
-   app.use(proxy('/auth/google', { target: 'http://localhost:5000' }));
-};
+   app.use(proxy('/auth/google', { target: 'http://localhost:5000' }))
+   app.use(proxy('/api/surveys/', { target: 'http://localhost:5000' }))
+   app.use(proxy('/api/*', { target: 'http://localhost:5000' }))
+}
