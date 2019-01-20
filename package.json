@@ -12,8 +12,8 @@
       "client": "npm run start --prefix client",
       "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run webhook\"",
       "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
-      "webhook": "ssh -R yourRandomSubdomainName:80:thawing-castle-17403.herokuapp.com serveo.net"
-   }, 
+      "webhook": "ssh -R yourRandomSubdomainName:80:localhost:5000 serveo.net"
+   },
    "author": "",
    "license": "ISC",
    "description": "",

@@ -8,3 +8,11 @@ Users need credits inorder to send surveys, you add credits by paying $5 for 5 c
    Payments are processed by the Stripe API
    Email clicks are handled by the SendGrid API
 
+
+
+Prod vs Dev.
+To switch, please go to the sendgrid mail settings and change the event notification http post url. 
+               https://yourRandomSubdomainName.serveo.net/api/surveys/webhooks to this. 
+         or    https://thawing-castle-17403.herokuapp.com/api/surveys/webhooks for prod
+make sure the package.json webhook script reads- 
+               "webhook": "ssh -R yourRandomSubdomainName:80:localhost:5000 serveo.net
