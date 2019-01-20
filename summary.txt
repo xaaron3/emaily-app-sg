@@ -1,0 +1,10 @@
+Emaily App
+
+This app allows the user to send out surveys to their customer emails,
+   getting feedback when a prompt is clicked in the emails. 
+
+Users need credits inorder to send surveys, you add credits by paying $5 for 5 credits
+   1 credit allows for 1 survey to be sent out to however many customer emails attached. 
+   Payments are processed by the Stripe API
+   Email clicks are handled by the SendGrid API
+
